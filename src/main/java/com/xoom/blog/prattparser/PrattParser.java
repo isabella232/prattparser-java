@@ -141,18 +141,4 @@ public class PrattParser {
         }
         return result;
     }
-
-    public static void main(String[] args) {
-        PrattParser parser = new PrattParser();
-        Map<String,Integer> variables = new HashMap<>();
-        variables.put("VAR1", 10);
-        variables.put("VAR2", 15);
-        Object node = parser.evaluate("12+7*(2-4)+4 != 2 AND NOT  VAR2 > 4 ", variables);
-        //Object node = parser.evaluate("12 > 11  AND  NOT 3 > 4 ");
-        Object result = parser.evaluateTree((ParseNode)node);
-        System.out.println(result) ;
-
-        int i = 0;
-    }
-
 }
